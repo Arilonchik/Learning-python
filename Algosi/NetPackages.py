@@ -42,3 +42,24 @@ def proc(packets, buf_size):
 
 if __name__ == '__main__':
     main()
+
+
+
+####################################
+import sys
+from collections import deque
+
+if __name__ == '__main__':
+    reader = (map(int, s.split()) for s in sys.stdin)
+    size, n = next(reader)
+    times = deque()
+    for a, d in reader:
+        while times and times[0] <= a:
+            times.popleft()
+        if len(times) < size:
+            if times:
+                a = max(a, times[-1])
+            print(a)
+            times.append(a+d)
+        else:
+            print(-1)
