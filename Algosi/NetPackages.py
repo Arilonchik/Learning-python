@@ -19,7 +19,7 @@ def proc(packets, buf_size):
             print(packet['start_time'])
             buf.append(packet['start_time'] + packet['duration'])
             continue
-        if len(buf) <= buf_size:
+        if len(buf) == buf_size:
             if buf[0] <= packet['start_time']:
                 if buf[-1] < packet['start_time']:
                     print(packet['start_time'])
@@ -27,10 +27,17 @@ def proc(packets, buf_size):
                 else:
                     print(buf[-1])
                     buf.append(buf[-1] + packet['duration'])
-                if len(buf) > buf_size:
-                    buf.popleft()
+                buf.popleft()
             else:
                 print(-1)
+            continue
+        if len(buf) < buf_size:
+            if buf[-1] < packet['start_time']:
+                print(packet['start_time'])
+                buf.append(packet['start_time'] + packet['duration'])
+            else:
+                print(buf[-1])
+                buf.append(buf[-1] + packet['duration'])
 
 
 if __name__ == '__main__':
