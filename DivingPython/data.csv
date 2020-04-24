@@ -1,0 +1,8 @@
+Тип (car_type);Марка (brand);Кол-во пассажирских мест (passenger_seats_count);Фото (photo_file_name);Кузов ДxШxВ, м (body_whl);Грузоподъемность, Тонн (carrying);Дополнительно (extra)
+car;Nissan xTtrail;4;f1.jpeg;;02.5;
+truck;Man;;f2.jpeg;8x3x2.5;20;
+car;Mazda 6;4;f3.jpeg;;02.5;
+spec_machine;Hitachi;;f4.jpeg;;1.2;Легкая техника для уборки снега
+truck;Man;;f2.jpeg;8j384x4x45;20.1;
+xcfg;Hitachi;;f4.jpeg;;1.2;rtrtrt
+car;;;;;;
