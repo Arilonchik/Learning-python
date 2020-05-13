@@ -3,16 +3,19 @@ import re
 
 
 class ClientServerProtocol(asyncio.Protocol):
+    """Async server for keeping metrics data, works with text protocol"""
     def connection_made(self, transport):
         self.transport = transport
         self.err = 'error\n{}\n'
         self.ok = 'ok\n{}\n'
 
     def data_received(self, data):
+        """Make answer"""
         resp = self.process_data(data.decode())
         self.transport.write(resp.encode())
 
     def process_data(self, data):
+        """Processing data from clients, sending answers"""
         comm, *args = data.split(' ')
         print(f'Comand {comm} args {args}')
         try:
@@ -27,6 +30,7 @@ class ClientServerProtocol(asyncio.Protocol):
         return self.err.format('wrong command')
 
     def _put(self, key, value, timestamp):
+        """Handling put command to write data"""
         if not (re.match(r'\d+', value) and re.match(r'\d', timestamp)):
             return self.err.format('wrong values')
         if key not in metrics.keys():
@@ -42,6 +46,7 @@ class ClientServerProtocol(asyncio.Protocol):
         return self.ok.format('\n')
 
     def _get(self, key):
+        """Handling get command to send data"""
         try:
             answer_args = ''
             if key == '*':
