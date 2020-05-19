@@ -1,0 +1,36 @@
+<div class="tags pr-3 flex-fill navigation">
+
+    <div class="container-fluid p-0">
+        <div class="row d-flex justify-content-center text-white">
+            <h4>Popular Tags</h4>
+        </div>
+        <h5>
+        <div class="row pad">
+            <div class="col-6 d-flex justify-content-center">
+                <div class="tags__item">
+        <a href="{% url 'tag_news' "python"%}" class="badge badge-warning">Python</a>
+    </div>
+            </div>
+            <div class="col-6 d-flex justify-content-center">
+                <div class="tags__item">
+        <a class="badge badge-warning" href="{% url 'tag_news' "django"%}">Django</a>
+    </div>
+            </div>
+        </div>
+        <div class="row pad">
+            <div class="col-6 d-flex justify-content-center">
+                <div class="tags__item">
+        <a class="badge badge-warning" href="{% url 'tag_news' "help"%}">Help</a>
+    </div>
+            </div>
+            <div class="col-6 d-flex justify-content-center">
+                <div class="tags__item">
+        <a class="badge badge-warning" href="{% url 'tag_news' "mixed" %}">Mixed one</a>
+    </div>
+            </div>
+        </div>
+            </h5>
+    </div>
+
+
+</div>

@@ -1,0 +1,34 @@
+.navigation {
+    margin-bottom:20px;
+}
+
+.topic-list__item {
+    margin-bottom: 20px;
+}
+
+.tags {
+    background: #1a043c;
+    padding: 5px;
+    opacity: 75%;
+}
+
+.pad {
+    padding: 7px;
+}
+
+.topic-list__main_item {
+    margin-bottom: 35px;
+    font-family: Trebuchet;
+}
+
+
+
+.topic_list {
+    outline: 3px solid #1a043c;
+}
+
+.bestus {
+    background: #1a043c;
+    color: #fcfaf2;
+    opacity: 75%;
+}

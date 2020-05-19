@@ -21,4 +21,5 @@ urlpatterns = [
     path('routing/', include('routing.urls')),
     path('template/', include('template.urls')),
     path('db/', include('db.urls')),
+    path('page/', include('page.urls')),
 ]
