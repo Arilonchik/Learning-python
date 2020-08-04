@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'routing',
     'template',
     'db',
-    'page'
+    'page',
+    'somemart'
 ]
 
 MIDDLEWARE = [
@@ -60,6 +61,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR, 'templates'),
+                 os.path.join(PROJECT_ROOT, 'apps/somemart/templates'),
                  os.path.join(PROJECT_ROOT, 'apps/page/templates'),
                  os.path.join(PROJECT_ROOT, 'apps/template/templates'),
                  ],
@@ -131,3 +133,5 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
     '/courseraTrain/static/',
 )
+
+LOGIN_URL = '/login/'

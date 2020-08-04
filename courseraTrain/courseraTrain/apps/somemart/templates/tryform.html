@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+товар
+{{req.user}}
+
+<form method="post", action="http://127.0.0.1:8000/somemart/api/v1/goods/">
+    <input name="title", type="text">
+    <input name="description", type="text">
+    <input name="price", type="number">
+    <input type="submit">
+    {% csrf_token %}
+</form>
+<br>
+отзыв
+<form method="post", action="http://127.0.0.1:8000/somemart/api/v1/<int:id>/goods/">
+    <input name="text", type="text">
+    <input name="grade", type="number">
+    <input type="submit">
+</form>
+</body>
+</html>

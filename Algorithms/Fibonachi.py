@@ -22,13 +22,24 @@ def fib_mod(n, m):
             an.pop(len(an)-1)
             an.pop(len(an)-1)
             return an[n % (len(an))]
-    return cur%m
+    return cur % m
+
+
+def f_ev(x):
+    if x == 0:
+        print('No elements')
+    pr, cur = 0, 1
+    even_list = [pr]
+    while len(even_list) != x:
+        pr, cur = cur, pr + cur
+        if cur % 2 == 0:
+            even_list.append(cur)
+    print(','.join(map(str, even_list)))
+
 
 def main():
     n = int(input())
-    # m = int(input())
-    # print(fib_mod(n, m))
-    print(fib(31))
+    f_ev(n)
 
 
 if __name__ == "__main__":
